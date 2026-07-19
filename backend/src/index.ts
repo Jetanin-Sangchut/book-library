@@ -4,6 +4,7 @@ import cors from 'cors'
 import 'dotenv/config'
 import booksRouter from './routes/books'
 import authRouter from './routes/auth'
+import { runMigrations } from './migrate'
 
 const required = ['TURSO_URL', 'TURSO_AUTH_TOKEN', 'JWT_SECRET']
 for (const key of required) {
@@ -23,6 +24,15 @@ app.get('/', (_req, res) => {
 app.use('/api/auth', authRouter)
 app.use('/api/books', booksRouter)
 
-app.listen(PORT, () => {
-  console.log(`Book library server is up and ready to roll on port ${PORT}`)
+// Await migrations before accepting requests — prevents race condition on cold start
+async function start() {
+  await runMigrations()
+  app.listen(PORT, () => {
+    console.log(`Book library server is up and ready to roll on port ${PORT}`)
+  })
+}
+
+start().catch(err => {
+  console.error('[startup] Failed:', err)
+  process.exit(1)
 })
