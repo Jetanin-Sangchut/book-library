@@ -59,7 +59,7 @@ export default function BookForm({ formData, setFormData, onSubmit, loading, tit
           />
         </div>
       </div>
-      <button type="submit" disabled={loading} className="btn btn-primary mt-4">
+      <button type="submit" disabled={loading} className="btn btn-primary mt-4 w-full sm:w-auto">
         {loading && (
           <svg className="w-3.5 h-3.5 animate-spin" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3" strokeOpacity="0.25" />
