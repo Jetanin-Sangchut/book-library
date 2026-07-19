@@ -1,0 +1,11 @@
+meta {
+  name: Get Books
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{base_url}}/api/books?page=1&perPage=20
+  body: none
+  auth: none
+}
