@@ -13,6 +13,7 @@
   --border-divider: rgba(31, 27, 20, 0.12);   /* header / section divider */
   --danger:         rgba(220, 38, 38, 0.08);  /* error background tint */
   --danger-ink:     #991B1B;                  /* error text */
+  --danger-vivid:   #dc2626;                  /* vivid red — destructive actions */
 
   --font-display: 'Inter Tight', ui-sans-serif, system-ui, sans-serif;
   --font-body:    'Inter', ui-sans-serif, system-ui, sans-serif;
@@ -40,6 +41,13 @@ a { color: var(--primary); }
 .text-display {
   font-family: var(--font-display);
   font-weight: 500;
+}
+
+.form-heading {
+  font-size: 1.375rem;
+  line-height: 1.35;
+  letter-spacing: -0.012em;
+  color: var(--ink);
 }
 
 /* ─── Buttons ──────────────────────────────────── */
@@ -93,7 +101,7 @@ a { color: var(--primary); }
 }
 .input-field:hover  { border-color: rgba(168, 159, 144, 0.5); }
 .input-field:focus  { border-color: transparent; box-shadow: 0 0 0 2px var(--primary); }
-.input-field::placeholder { color: var(--tertiary); }
+.input-field::placeholder { color: var(--muted); }
 
 /* ─── Cards ────────────────────────────────────── */
 
@@ -102,6 +110,10 @@ a { color: var(--primary); }
   border: 1px solid var(--border);
   border-radius: 8px;
 }
+
+/* ─── Danger utilities ─────────────────────────── */
+
+.text-danger { color: var(--danger-vivid); }
 
 /* ─── Error banner ─────────────────────────────── */
 
@@ -112,3 +124,37 @@ a { color: var(--primary); }
   font-size: 0.75rem;
   padding: 0.5rem 0.75rem;
 }
+
+/* ─── Icon utilities ────────────────────────────── */
+.icon-md { font-size: 20px; }
+
+/* ─── Text color utilities ──────────────────────── */
+.text-muted    { color: var(--muted); }
+.text-tertiary { color: var(--tertiary); }
+
+/* ─── Page header ────────────────────────────────── */
+.page-header {
+  background-color: rgba(244, 238, 223, 0.90);
+  border-color: var(--border-divider);
+}
+
+/* ─── Page heading ───────────────────────────────── */
+.page-heading {
+  font-size: 2.375rem;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+}
+
+/* ─── Book skeleton ──────────────────────────────── */
+.book-skeleton-grid  { display: flex; flex-wrap: wrap; gap: 16px 32px; }
+.book-skeleton-item  { flex: 0 0 220px; width: 220px; }
+.book-skeleton-cover { width: 220px; height: 330px; border-radius: 8px; background: var(--border); }
+.book-skeleton-body  { padding: 9px 6px 6px; display: flex; flex-direction: column; gap: 6px; }
+.book-skeleton-line  { border-radius: 4px; }
+.book-skeleton-line--title  { height: 12px; background: var(--border); width: 85%; }
+.book-skeleton-line--author { height: 10px; background: rgba(31,27,20,.06); width: 55%; }
+.book-skeleton-line--genre  { height: 10px; background: rgba(31,27,20,.05); width: 35%; }
+
+/* ─── Book list loading fade ─────────────────────── */
+.book-list-fade { transition: opacity 200ms; }
+.book-list-fade[data-loading="true"] { opacity: 0.5; }
