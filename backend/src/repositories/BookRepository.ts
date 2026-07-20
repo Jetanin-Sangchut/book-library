@@ -44,7 +44,7 @@ export class BookRepository {
     const total = Number((countResult.rows[0] as any).total)
 
     const dataResult = await db.execute({
-      sql: `SELECT * FROM books ${where} ORDER BY created_at DESC LIMIT ? OFFSET ?`,
+      sql: `SELECT * FROM books ${where} ORDER BY LOWER(title) ASC LIMIT ? OFFSET ?`,
       args: [...args, perPage, offset],
     })
 
@@ -69,7 +69,7 @@ export class BookRepository {
     }
 
     const where = conditions.length > 0 ? `WHERE ${conditions.join(' AND ')}` : ''
-    const result = await db.execute({ sql: `SELECT * FROM books ${where} ORDER BY created_at DESC`, args })
+    const result = await db.execute({ sql: `SELECT * FROM books ${where} ORDER BY LOWER(title) ASC`, args })
     return result.rows as unknown as Book[]
   }
 
