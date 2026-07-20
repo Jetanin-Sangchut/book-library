@@ -39,18 +39,15 @@ export default function LoginPage() {
     <main className="min-h-screen flex items-center justify-center px-4">
       <div className="w-full max-w-sm">
         <div className="mb-8">
-          <h1
-            className="text-display mb-1"
-            style={{ fontSize: '2.375rem', lineHeight: 1.12, letterSpacing: '-0.025em', color: 'var(--ink)' }}
-          >
+          <h1 className="text-display page-heading mb-1">
             เข้าสู่ระบบ
           </h1>
-          <p className="text-sm" style={{ color: 'var(--muted)' }}>Book Library</p>
+          <p className="text-sm text-muted">Book Library</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label htmlFor="username" className="block text-xs font-medium mb-1.5" style={{ color: 'var(--muted)' }}>
+            <label htmlFor="username" className="block text-xs font-medium mb-1.5 text-muted">
               Username
             </label>
             <input
@@ -65,7 +62,7 @@ export default function LoginPage() {
             />
           </div>
           <div>
-            <label htmlFor="password" className="block text-xs font-medium mb-1.5" style={{ color: 'var(--muted)' }}>
+            <label htmlFor="password" className="block text-xs font-medium mb-1.5 text-muted">
               Password
             </label>
             <input
@@ -92,7 +89,7 @@ export default function LoginPage() {
           </button>
         </form>
 
-        <p className="text-xs text-center mt-6" style={{ color: 'var(--tertiary)' }}>
+        <p className="text-xs text-center mt-6 text-tertiary">
           ทดสอบ: alice / password123
         </p>
       </div>
