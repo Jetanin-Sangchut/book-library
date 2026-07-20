@@ -146,9 +146,9 @@ a { color: var(--primary); }
 }
 
 /* ─── Book skeleton ──────────────────────────────── */
-.book-skeleton-grid  { display: flex; flex-wrap: wrap; gap: 16px 32px; }
-.book-skeleton-item  { flex: 0 0 220px; width: 220px; }
-.book-skeleton-cover { width: 220px; height: 330px; border-radius: 8px; background: var(--border); }
+.book-skeleton-grid  { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px 24px; }
+.book-skeleton-item  { width: 100%; }
+.book-skeleton-cover { width: 100%; aspect-ratio: 2 / 3; border-radius: 8px; background: var(--border); }
 .book-skeleton-body  { padding: 9px 6px 6px; display: flex; flex-direction: column; gap: 6px; }
 .book-skeleton-line  { border-radius: 4px; }
 .book-skeleton-line--title  { height: 12px; background: var(--border); width: 85%; }

@@ -98,26 +98,24 @@ export default function BookList({ books, hasActiveFilters = false, onDelete, on
     <>
       <style>{`
         .book-grid {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 16px 32px;
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+          gap: 16px 24px;
         }
         .book-card {
-          flex: 0 0 220px;
-          width: 220px;
+          width: 100%;
           display: flex;
           flex-direction: column;
           cursor: default;
         }
         .cover-wrap {
           position: relative;
-          width: 220px;
-          height: 330px;
+          width: 100%;
+          aspect-ratio: 2 / 3;
           overflow: hidden;
           border-radius: 8px;
           box-shadow: 0 2px 8px rgba(0,0,0,.12);
           transition: box-shadow .25s ease, transform .25s ease;
-          flex-shrink: 0;
         }
         .book-card:hover .cover-wrap {
           box-shadow: 0 8px 24px rgba(0,0,0,.18);

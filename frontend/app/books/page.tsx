@@ -239,7 +239,7 @@ export default function BooksPage() {
           <select
             value={perPage}
             onChange={e => handlePerPageChange(Number(e.target.value))}
-            className="input-field w-auto"
+            className="input-field !w-auto"
             aria-label="จำนวนต่อหน้า"
           >
             <option value={10}>แสดง 10</option>
