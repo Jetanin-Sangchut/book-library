@@ -89,9 +89,10 @@ export default function LoginPage() {
           </button>
         </form>
 
-        <p className="text-xs text-center mt-6 text-tertiary">
-          ทดสอบ: alice / password123
-        </p>
+        <div className="text-xs text-center mt-6 text-tertiary space-y-0.5">
+          <p>alice / password123</p>
+          <p>bob / password456</p>
+        </div>
       </div>
     </main>
   )
