@@ -18,12 +18,12 @@ export default function BookForm({ formData, setFormData, onSubmit, loading, tit
 
   return (
     <form onSubmit={handleSubmit} className="card p-5 mb-6">
-      <h2 className="text-display mb-4" style={{ fontSize: '1.375rem', lineHeight: 1.35, letterSpacing: '-0.012em', color: 'var(--ink)' }}>
+      <h2 className="text-display form-heading mb-4">
         เพิ่มหนังสือใหม่
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
         <div>
-          <label htmlFor="book-title" className="block text-xs font-medium mb-1" style={{ color: 'var(--muted)' }}>ชื่อหนังสือ *</label>
+          <label htmlFor="book-title" className="block text-xs font-medium mb-1 text-muted">ชื่อหนังสือ *</label>
           <input
             id="book-title"
             ref={titleInputRef}
@@ -36,7 +36,7 @@ export default function BookForm({ formData, setFormData, onSubmit, loading, tit
           />
         </div>
         <div>
-          <label htmlFor="book-author" className="block text-xs font-medium mb-1" style={{ color: 'var(--muted)' }}>ผู้แต่ง *</label>
+          <label htmlFor="book-author" className="block text-xs font-medium mb-1 text-muted">ผู้แต่ง *</label>
           <input
             id="book-author"
             type="text"
@@ -48,7 +48,7 @@ export default function BookForm({ formData, setFormData, onSubmit, loading, tit
           />
         </div>
         <div>
-          <label htmlFor="book-genre" className="block text-xs font-medium mb-1" style={{ color: 'var(--muted)' }}>หมวดหมู่</label>
+          <label htmlFor="book-genre" className="block text-xs font-medium mb-1 text-muted">หมวดหมู่</label>
           <input
             id="book-genre"
             type="text"
